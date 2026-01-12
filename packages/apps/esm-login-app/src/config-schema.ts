@@ -95,7 +95,7 @@ export const configSchema = {
   },
   showPasswordOnSeparateScreen: {
     _type: Type.Boolean,
-    _default: true,
+    _default: false,
     _description:
       'Whether to show the password field on a separate screen. If false, the password field will be shown on the same screen.',
   },

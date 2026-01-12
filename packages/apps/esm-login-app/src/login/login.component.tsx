@@ -15,6 +15,7 @@ import { type ConfigSchema } from '../config-schema';
 import Logo from '../logo.component';
 import Footer from '../footer.component';
 import styles from './login.scss';
+import { getOtp } from '../resources/otp.resource';
 
 export interface LoginReferrer {
   referrer?: string;
@@ -110,9 +111,8 @@ const Login: React.FC = () => {
               }
             }
 
-            openmrsNavigate({ to });
-          } else {
-            navigate('/login/location');
+            await getOtp(username, password);
+            navigate('otp', { state: { username, password, referrer: location?.state?.referrer } });
           }
         } else {
           setErrorMessage(t('invalidCredentials', 'Invalid username or password'));

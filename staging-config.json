@@ -1,0 +1,4 @@
+{
+  "etlBaseUrl": "https://staging.ampath.or.ke/etl-staging/etl/",
+  "localhostUrl": "http://localhost:8002/etl/"
+}
